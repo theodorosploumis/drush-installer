@@ -1,25 +1,22 @@
 #!/bin/sh
-# IMPORTANT. You must have curl, wget and php phar extension installed
-if command -v php >/dev/null 2>&1
-then
+# IMPORTANT. You must have curl, wget and php installed
+if ! type php > /dev/null; then
   echo "php is not installed. Abording." >&2;
   exit 1;
 fi
 
-if command -v curl >/dev/null 2>&1
-then
+if ! type curl > /dev/null; then
   echo "curl is not installed. Abording." >&2;
   exit 1;
 fi
 
-if command -v testing >/dev/null 2>&1
-then
-  echo "testing is not installed. Abording." >&2;
+if ! type wget > /dev/null; then
+  echo "wget is not installed. Abording." >&2;
   exit 1;
 fi
 
 # Use Bash as command line (if you like you can use your own CL too!)
-chsh -s "$(which bash)" "$USER" 
+chsh -s "$(command -v bash)" "$USER"
 
 # Enter Drush version (branch from Github)
 # Notice that you need Drush 7.x (branch master) to be able to work with Drupal 8.x
@@ -48,9 +45,3 @@ php ~/bin/composer.phar install
 # Add alias to .bashrc
 touch ~/.bashrc
 echo "alias drush='~/drush/drush'" > ~/.bashrc
-
-# Source the changed .bash_profile or restart ssh session
-source ~/.bashrc
-
-# Exit and test
-echo "Drush installation finished! Run Drush to test it."
