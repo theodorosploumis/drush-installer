@@ -1,18 +1,18 @@
 #!/bin/sh
 # IMPORTANT. You must have curl, wget and php phar extension installed
-if command -v php >/dev/null
+if command -v php >/dev/null 2>&1
 then
   echo "php is not installed. Abording." >&2;
   exit 1;
 fi
 
-if command -v curl >/dev/null
+if command -v curl >/dev/null 2>&1
 then
   echo "curl is not installed. Abording." >&2;
   exit 1;
 fi
 
-if command -v testing >/dev/null
+if command -v testing >/dev/null 2>&1
 then
   echo "testing is not installed. Abording." >&2;
   exit 1;
