@@ -1,8 +1,22 @@
-#!/bin/bash -e
-# IMPORTANT. You must have curl, git and php installed. Also "$which git" must not be empty.
+#!/bin/sh
+# IMPORTANT. You must have curl, git and php installed
+if ! type php > /dev/null; then
+  echo "php is not installed. Abording." >&2;
+  exit 1;
+fi
+
+if ! type curl > /dev/null; then
+  echo "curl is not installed. Abording." >&2;
+  exit 1;
+fi
+
+if ! type git > /dev/null; then
+  echo "git is not installed. Abording." >&2;
+  exit 1;
+fi
 
 # Use Bash as command line (if you like you can use your own CL too!)
-chsh -s $(which bash) $USER
+chsh -s "$(command -v bash)" "$USER"
 
 # Enter Drush version (branch from Github)
 echo -n "Please enter the Drush version (eg 6.x): "
