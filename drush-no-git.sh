@@ -43,10 +43,13 @@ cd ~/drush
 php ~/bin/composer.phar update
 php ~/bin/composer.phar install
 
-# Add aliases to .bashrc
-touch ~/.bashrc
-echo "alias composer='php ~/bin/composer.phar'" > ~/.bashrc
-echo "alias drush='~/drush/drush'" > ~/.bashrc
+# Add alias to .bash_profile
+echo "Adding drush and composer alias"
+touch ~/.bash_profile
+echo "alias composer='php ~/bin/composer.phar'" > ~/.bash_profile
+echo "alias drush='~/drush/drush'" > ~/.bash_profile
 
-# Source .bashrc
-source ~/.bashrc
+# Source the changed .bash_profile or restart ssh session
+source ~/.bash_profile
+
+echo "Drush installation finished! Run Drush to test it."
