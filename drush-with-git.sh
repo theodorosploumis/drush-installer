@@ -19,7 +19,7 @@ fi
 chsh -s "$(command -v bash)" "$USER"
 
 # Enter Drush version (branch from Github)
-echo -n "Please enter the Drush version (eg 6.x): "
+echo -n "Please enter the Drush version (eg 7.x): "
 read branch
 
 # Install Composer
@@ -42,11 +42,13 @@ chmod u+x ~/drush/drush
 # Install Drush from Composer
 echo "Compile Drush with Composer"
 cd ~/drush
+php ~/bin/composer.phar update
 php ~/bin/composer.phar install
 
 # Add alias to .bash_profile
-echo "Adding git alias"
+echo "Adding drush and composer alias"
 touch ~/.bashrc
+echo "alias composer='php ~/bin/composer.phar'" > ~/.bashrc
 echo "alias drush='~/drush/drush'" > ~/.bashrc
 
 # Source the changed .bash_profile or restart ssh session
