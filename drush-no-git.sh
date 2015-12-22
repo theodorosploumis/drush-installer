@@ -20,7 +20,7 @@ chsh -s "$(command -v bash)" "$USER"
 
 # Enter Drush version (branch from Github)
 # Notice that you need Drush 7.x (branch master) to be able to work with Drupal 8.x
-echo -n "Please enter the Drush version (eg 7.x): "
+echo -n "Please enter the Drush version (eg 8.0.x): "
 read branch
 
 # Install Composer
