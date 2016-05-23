@@ -19,4 +19,3 @@ $ cd;wget https://raw.githubusercontent.com/theodorosploumis/drush-installer/mas
 
 ## Known issues
 - [Composer Update Fails due to Github Authorization](https://github.com/composer/composer/issues/3542)
-- [Permission denied (publickey). fatal: Could not read from remote repository.](http://stackoverflow.com/q/12940626/1365264)

@@ -31,9 +31,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
 # Git method (recommended)
 echo "Cloning Drush from Github"
 cd ~
-git clone git@github.com:drush-ops/drush.git
-cd ~/drush
-git checkout ${branch}
+git clone -b ${branch} https://github.com/drush-ops/drush.git ~/drush
 
 # Make the drush folder executable by current USER
 echo "Making the drush folder executable by current USER"
@@ -41,8 +39,8 @@ chmod u+x ~/drush/drush
 
 # Install Drush from Composer
 echo "Compile Drush with Composer"
-cd ~/drush
-php ~/bin/composer.phar update
+cd ~/drush && \
+php ~/bin/composer.phar update && \
 php ~/bin/composer.phar install
 
 # Add alias to .bash_profile
