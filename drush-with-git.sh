@@ -19,7 +19,7 @@ fi
 chsh -s "$(command -v bash)" "$USER"
 
 # Enter Drush version (branch from Github)
-echo -n "Please enter the Drush version (eg 7.x): "
+echo -n "Please enter the Drush version (eg 8.x): "
 read branch
 
 # Install Composer
