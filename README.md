@@ -16,6 +16,10 @@ $ cd;wget https://raw.githubusercontent.com/theodorosploumis/drush-installer/mas
 `
 $ cd;wget https://raw.githubusercontent.com/theodorosploumis/drush-installer/master/drush-no-git.sh;bash drush-no-git.sh
 `
+### As a php phar
+`
+$ cd;wget https://raw.githubusercontent.com/theodorosploumis/drush-installer/master/drush-phar.sh;bash drush-phar.sh
+`
 
 ## Known issues
 - [Composer Update Fails due to Github Authorization](https://github.com/composer/composer/issues/3542)
