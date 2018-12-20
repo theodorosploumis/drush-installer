@@ -27,12 +27,15 @@ wget https://github.com/drush-ops/drush/releases/download/"${branch}"/drush.phar
 # Make it execurtable and move inside ~/drush folder
 chmod u+x ~/drush.phar && mv ~/drush.phar ~/drush/drush
 
-# Add alias to .bash_profile
+# Add alias to dorfiles
 echo "Adding drush and composer alias"
 touch ~/.bash_profile
+touch ~/.bashrc
 echo "alias drush='~/drush/drush'" > ~/.bash_profile
+echo "alias drush='~/drush/drush'" > ~/.bashrc
 
-# Source the changed .bash_profile or restart ssh session
+# Source the changed files or restart ssh session
 source ~/.bash_profile
+source ~/.bashrc
 
 echo "Drush phar installation finished! Run Drush to test it."
